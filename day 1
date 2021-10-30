@@ -1,0 +1,30 @@
+package com.kimcodes;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        
+        // user inputs instructions
+        Scanner input = new Scanner(System.in);
+        System.out.println("Insert instructions: ");
+        String instructions = input.nextLine();
+
+        // initialize the floor counter to 0
+        int floor = 0;
+        int n = instructions.length();
+
+        // iterate through chars in input, +/- floor
+        for (int i = 0; i < n; i++) {
+            char c = instructions.charAt(i);
+            if (instructions.charAt(i) == '(') {
+                floor++;
+            }
+            else if (instructions.charAt(i) == ')') {
+                floor--;
+            }
+        }
+        System.out.println(floor);
+    }
+}
